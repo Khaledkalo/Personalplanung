@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="PersonalPlanungModelStoreContainer" CdmEntityContainer="PersonalPlanungEntities">
+  <EntityContainerMapping StorageEntityContainer="PersonalPlanungModelStoreContainer" CdmEntityContainer="PersonalPlanungEntities1">
     <EntitySetMapping Name="BenutzerKonto">
       <EntityTypeMapping TypeName="PersonalPlanungModel.BenutzerKonto">
         <MappingFragment StoreEntitySet="BenutzerKonto">
@@ -16,8 +16,8 @@
       <EntityTypeMapping TypeName="PersonalPlanungModel.Mitarbeiter">
         <MappingFragment StoreEntitySet="Mitarbeiter">
           <ScalarProperty Name="ID_Mitarbeiter" ColumnName="ID_Mitarbeiter" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Vorname" ColumnName="Vorname" />
+          <ScalarProperty Name="Nachname" ColumnName="Nachname" />
           <ScalarProperty Name="Geburtsdatum" ColumnName="Geburtsdatum" />
           <ScalarProperty Name="Einstellungsdatum" ColumnName="Einstellungsdatum" />
           <ScalarProperty Name="Stellenbezeichnung" ColumnName="Stellenbezeichnung" />

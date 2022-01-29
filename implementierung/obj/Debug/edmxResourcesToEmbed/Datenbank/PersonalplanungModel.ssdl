@@ -15,8 +15,8 @@
       <PropertyRef Name="ID_Mitarbeiter" />
     </Key>
     <Property Name="ID_Mitarbeiter" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar" MaxLength="100" />
     <Property Name="Vorname" Type="nvarchar" MaxLength="100" />
+    <Property Name="Nachname" Type="nvarchar" MaxLength="100" />
     <Property Name="Geburtsdatum" Type="date" />
     <Property Name="Einstellungsdatum" Type="date" />
     <Property Name="Stellenbezeichnung" Type="nvarchar" MaxLength="100" />

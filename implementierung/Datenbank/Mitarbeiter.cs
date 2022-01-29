@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Personalplanung.Datenbank
+namespace Perso.Datenbank
 {
     using System;
     using System.Collections.Generic;
@@ -22,8 +22,8 @@ namespace Personalplanung.Datenbank
         }
     
         public int ID_Mitarbeiter { get; set; }
-        public string Name { get; set; }
         public string Vorname { get; set; }
+        public string Nachname { get; set; }
         public Nullable<System.DateTime> Geburtsdatum { get; set; }
         public Nullable<System.DateTime> Einstellungsdatum { get; set; }
         public string Stellenbezeichnung { get; set; }

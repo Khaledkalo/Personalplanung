@@ -71,7 +71,7 @@
                             <TextBlock Text=" - " />
                             <TextBlock Text="{Binding Vorname}" />
                             <TextBlock Text=" " />
-                            <TextBlock Text="{Binding Name}" />
+                            <TextBlock Text="{Binding Nachname}" />
                             <TextBlock Text="   -   " />
                             <TextBlock Text="{Binding Stellenbezeichnung}" />
                         </StackPanel>

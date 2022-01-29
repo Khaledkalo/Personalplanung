@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Personalplanung.Datenbank
+namespace Perso.Datenbank
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class PersonalPlanungEntities : DbContext
+    public partial class PersonalPlanungEntities1 : DbContext
     {
-        public PersonalPlanungEntities()
-            : base("name=PersonalPlanungEntities")
+        public PersonalPlanungEntities1()
+            : base("name=PersonalPlanungEntities1")
         {
         }
     

@@ -20,8 +20,8 @@
             <PropertyRef Name="ID_Mitarbeiter" />
           </Key>
           <Property Name="ID_Mitarbeiter" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" MaxLength="100" />
           <Property Name="Vorname" Type="nvarchar" MaxLength="100" />
+          <Property Name="Nachname" Type="nvarchar" MaxLength="100" />
           <Property Name="Geburtsdatum" Type="date" />
           <Property Name="Einstellungsdatum" Type="date" />
           <Property Name="Stellenbezeichnung" Type="nvarchar" MaxLength="100" />
@@ -120,8 +120,8 @@
             <PropertyRef Name="ID_Mitarbeiter" />
           </Key>
           <Property Name="ID_Mitarbeiter" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Vorname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Nachname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Geburtsdatum" Type="DateTime" Precision="0" />
           <Property Name="Einstellungsdatum" Type="DateTime" Precision="0" />
           <Property Name="Stellenbezeichnung" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
@@ -156,7 +156,7 @@
           <End Role="Mitarbeiter" Type="Self.Mitarbeiter" Multiplicity="*" />
           <End Role="Plann" Type="Self.Plann" Multiplicity="*" />
         </Association>
-        <EntityContainer Name="PersonalPlanungEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="PersonalPlanungEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="BenutzerKonto" EntityType="Self.BenutzerKonto" />
           <EntitySet Name="Mitarbeiter" EntityType="Self.Mitarbeiter" />
           <EntitySet Name="Plann" EntityType="Self.Plann" />
@@ -174,7 +174,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="PersonalPlanungModelStoreContainer" CdmEntityContainer="PersonalPlanungEntities">
+        <EntityContainerMapping StorageEntityContainer="PersonalPlanungModelStoreContainer" CdmEntityContainer="PersonalPlanungEntities1">
           <EntitySetMapping Name="BenutzerKonto">
             <EntityTypeMapping TypeName="PersonalPlanungModel.BenutzerKonto">
               <MappingFragment StoreEntitySet="BenutzerKonto">
@@ -190,8 +190,8 @@
             <EntityTypeMapping TypeName="PersonalPlanungModel.Mitarbeiter">
               <MappingFragment StoreEntitySet="Mitarbeiter">
                 <ScalarProperty Name="ID_Mitarbeiter" ColumnName="ID_Mitarbeiter" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Vorname" ColumnName="Vorname" />
+                <ScalarProperty Name="Nachname" ColumnName="Nachname" />
                 <ScalarProperty Name="Geburtsdatum" ColumnName="Geburtsdatum" />
                 <ScalarProperty Name="Einstellungsdatum" ColumnName="Einstellungsdatum" />
                 <ScalarProperty Name="Stellenbezeichnung" ColumnName="Stellenbezeichnung" />

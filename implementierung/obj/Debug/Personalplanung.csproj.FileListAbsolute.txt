@@ -25,3 +25,29 @@ I:\1_HBFS-WI\SOT\SoT - Git\gruppenarbeit\Code\Perso\Perso\obj\Debug\Personalplan
 I:\1_HBFS-WI\SOT\SoT - Git\gruppenarbeit\Code\Perso\Perso\obj\Debug\Personalplanung.csproj.CopyComplete
 I:\1_HBFS-WI\SOT\SoT - Git\gruppenarbeit\Code\Perso\Perso\obj\Debug\Perso.exe
 I:\1_HBFS-WI\SOT\SoT - Git\gruppenarbeit\Code\Perso\Perso\obj\Debug\Perso.pdb
+I:\Hausarbeit\SOT -Hausarbeit\Perso\Perso\bin\Debug\Perso.exe.config
+I:\Hausarbeit\SOT -Hausarbeit\Perso\Perso\bin\Debug\Perso.exe
+I:\Hausarbeit\SOT -Hausarbeit\Perso\Perso\bin\Debug\Perso.pdb
+I:\Hausarbeit\SOT -Hausarbeit\Perso\Perso\bin\Debug\EntityFramework.dll
+I:\Hausarbeit\SOT -Hausarbeit\Perso\Perso\bin\Debug\EntityFramework.SqlServer.dll
+I:\Hausarbeit\SOT -Hausarbeit\Perso\Perso\bin\Debug\EntityFramework.xml
+I:\Hausarbeit\SOT -Hausarbeit\Perso\Perso\bin\Debug\EntityFramework.SqlServer.xml
+I:\Hausarbeit\SOT -Hausarbeit\Perso\Perso\obj\Debug\UserControl\Home.g.cs
+I:\Hausarbeit\SOT -Hausarbeit\Perso\Perso\obj\Debug\UserControl\Login.g.cs
+I:\Hausarbeit\SOT -Hausarbeit\Perso\Perso\obj\Debug\MainWindow.g.cs
+I:\Hausarbeit\SOT -Hausarbeit\Perso\Perso\obj\Debug\UserControl\PlanAnzeigen.g.cs
+I:\Hausarbeit\SOT -Hausarbeit\Perso\Perso\obj\Debug\App.g.cs
+I:\Hausarbeit\SOT -Hausarbeit\Perso\Perso\obj\Debug\Perso_Content.g.cs
+I:\Hausarbeit\SOT -Hausarbeit\Perso\Perso\obj\Debug\Perso_MarkupCompile.cache
+I:\Hausarbeit\SOT -Hausarbeit\Perso\Perso\obj\Debug\Perso_MarkupCompile.lref
+I:\Hausarbeit\SOT -Hausarbeit\Perso\Perso\obj\Debug\UserControl\Home.baml
+I:\Hausarbeit\SOT -Hausarbeit\Perso\Perso\obj\Debug\UserControl\Login.baml
+I:\Hausarbeit\SOT -Hausarbeit\Perso\Perso\obj\Debug\MainWindow.baml
+I:\Hausarbeit\SOT -Hausarbeit\Perso\Perso\obj\Debug\UserControl\PlanAnzeigen.baml
+I:\Hausarbeit\SOT -Hausarbeit\Perso\Perso\obj\Debug\Perso.g.resources
+I:\Hausarbeit\SOT -Hausarbeit\Perso\Perso\obj\Debug\Perso.Properties.Resources.resources
+I:\Hausarbeit\SOT -Hausarbeit\Perso\Perso\obj\Debug\Personalplanung.csproj.GenerateResource.cache
+I:\Hausarbeit\SOT -Hausarbeit\Perso\Perso\obj\Debug\Personalplanung.csproj.CoreCompileInputs.cache
+I:\Hausarbeit\SOT -Hausarbeit\Perso\Perso\obj\Debug\Personalplanung.csproj.CopyComplete
+I:\Hausarbeit\SOT -Hausarbeit\Perso\Perso\obj\Debug\Perso.exe
+I:\Hausarbeit\SOT -Hausarbeit\Perso\Perso\obj\Debug\Perso.pdb

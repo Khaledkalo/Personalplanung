@@ -157,16 +157,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Datenbank\PersonalplanungModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>PersonalplanungModel.Context.cs</LastGenOutput>
-      <DependentUpon>PersonalplanungModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="Datenbank\PersonalplanungModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PersonalplanungModel.edmx</DependentUpon>
-      <LastGenOutput>PersonalplanungModel.cs</LastGenOutput>
-    </Content>
     <Resource Include="Images\icons-user.png" />
   </ItemGroup>
   <ItemGroup>
@@ -176,5 +166,17 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Content Include="Datenbank\PersonalplanungModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PersonalplanungModel.edmx</DependentUpon>
+      <LastGenOutput>PersonalplanungModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Datenbank\PersonalplanungModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PersonalplanungModel.edmx</DependentUpon>
+      <LastGenOutput>PersonalplanungModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

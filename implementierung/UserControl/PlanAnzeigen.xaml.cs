@@ -1,4 +1,4 @@
-﻿using Personalplanung.Datenbank;
+﻿using Perso.Datenbank;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,7 +21,7 @@ namespace Personalplanung
     public partial class PlanAnzeigen : UserControl
     {
         MainWindow mainWindow;
-        private PersonalPlanungEntities Context = new PersonalPlanungEntities();
+        private PersonalPlanungEntities1 Context = new PersonalPlanungEntities1();
         ICollectionView CollectionView;
         public PlanAnzeigen(MainWindow _mainWindow)
         {

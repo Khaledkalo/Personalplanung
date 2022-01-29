@@ -16,8 +16,8 @@
       <PropertyRef Name="ID_Mitarbeiter" />
     </Key>
     <Property Name="ID_Mitarbeiter" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="Vorname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Nachname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="Geburtsdatum" Type="DateTime" Precision="0" />
     <Property Name="Einstellungsdatum" Type="DateTime" Precision="0" />
     <Property Name="Stellenbezeichnung" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
@@ -52,7 +52,7 @@
     <End Role="Mitarbeiter" Type="Self.Mitarbeiter" Multiplicity="*" />
     <End Role="Plann" Type="Self.Plann" Multiplicity="*" />
   </Association>
-  <EntityContainer Name="PersonalPlanungEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="PersonalPlanungEntities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="BenutzerKonto" EntityType="Self.BenutzerKonto" />
     <EntitySet Name="Mitarbeiter" EntityType="Self.Mitarbeiter" />
     <EntitySet Name="Plann" EntityType="Self.Plann" />

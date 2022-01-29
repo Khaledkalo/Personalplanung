@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'I:\1_HBFS-WI\SOT\SoT - Git\gruppenarbeit\Code\Perso\Perso\Datenbank\PersonalplanungModel.edmx'. 
+﻿// T4 code generation is enabled for model 'I:\Hausarbeit\SOT -Hausarbeit\Perso\Perso\Datenbank\PersonalplanungModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

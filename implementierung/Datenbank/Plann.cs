@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Personalplanung.Datenbank
+namespace Perso.Datenbank
 {
     using System;
     using System.Collections.Generic;

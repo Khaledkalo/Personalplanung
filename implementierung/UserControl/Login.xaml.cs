@@ -1,4 +1,4 @@
-﻿using Personalplanung.Datenbank;
+﻿using Perso.Datenbank;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,7 +29,7 @@ namespace Personalplanung
         {
             try
             {
-                using (PersonalPlanungEntities db = new PersonalPlanungEntities())
+                using (PersonalPlanungEntities1 db = new PersonalPlanungEntities1())
                 {
                     var list = db.BenutzerKonto.Where(x => x.Benutzername == Username.Text && x.Passwort == Password.Password).ToList();
                     foreach (var b in list)
