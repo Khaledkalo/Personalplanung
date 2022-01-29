@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PersonalPlanungModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BenutzerKonto">
+    <Key>
+      <PropertyRef Name="ID_Account" />
+    </Key>
+    <Property Name="ID_Account" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Benutzername" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Passwort" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IstAdmin" Type="Boolean" />
+    <Property Name="Angestellter" Type="Int32" />
+    <NavigationProperty Name="Mitarbeiter" Relationship="Self.fk_Angestellter" FromRole="BenutzerKonto" ToRole="Mitarbeiter" />
+  </EntityType>
+  <EntityType Name="Mitarbeiter">
+    <Key>
+      <PropertyRef Name="ID_Mitarbeiter" />
+    </Key>
+    <Property Name="ID_Mitarbeiter" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Vorname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Geburtsdatum" Type="DateTime" Precision="0" />
+    <Property Name="Einstellungsdatum" Type="DateTime" Precision="0" />
+    <Property Name="Stellenbezeichnung" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="BenutzerKonto" Relationship="Self.fk_Angestellter" FromRole="Mitarbeiter" ToRole="BenutzerKonto" />
+    <NavigationProperty Name="Plann" Relationship="Self.MitarbeiterPlan" FromRole="Mitarbeiter" ToRole="Plann" />
+  </EntityType>
+  <EntityType Name="Plann">
+    <Key>
+      <PropertyRef Name="ID_Plan" />
+    </Key>
+    <Property Name="ID_Plan" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Jahr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Kalenderwoche" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Wochentag" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Termin" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Mitarbeiter" Relationship="Self.MitarbeiterPlan" FromRole="Plann" ToRole="Mitarbeiter" />
+  </EntityType>
+  <Association Name="fk_Angestellter">
+    <End Role="Mitarbeiter" Type="Self.Mitarbeiter" Multiplicity="0..1" />
+    <End Role="BenutzerKonto" Type="Self.BenutzerKonto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Mitarbeiter">
+        <PropertyRef Name="ID_Mitarbeiter" />
+      </Principal>
+      <Dependent Role="BenutzerKonto">
+        <PropertyRef Name="Angestellter" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MitarbeiterPlan">
+    <End Role="Mitarbeiter" Type="Self.Mitarbeiter" Multiplicity="*" />
+    <End Role="Plann" Type="Self.Plann" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="PersonalPlanungEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BenutzerKonto" EntityType="Self.BenutzerKonto" />
+    <EntitySet Name="Mitarbeiter" EntityType="Self.Mitarbeiter" />
+    <EntitySet Name="Plann" EntityType="Self.Plann" />
+    <AssociationSet Name="fk_Angestellter" Association="Self.fk_Angestellter">
+      <End Role="Mitarbeiter" EntitySet="Mitarbeiter" />
+      <End Role="BenutzerKonto" EntitySet="BenutzerKonto" />
+    </AssociationSet>
+    <AssociationSet Name="MitarbeiterPlan" Association="Self.MitarbeiterPlan">
+      <End Role="Mitarbeiter" EntitySet="Mitarbeiter" />
+      <End Role="Plann" EntitySet="Plann" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

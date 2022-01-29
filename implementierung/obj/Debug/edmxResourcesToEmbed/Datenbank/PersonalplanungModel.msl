@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PersonalPlanungModelStoreContainer" CdmEntityContainer="PersonalPlanungEntities">
+    <EntitySetMapping Name="BenutzerKonto">
+      <EntityTypeMapping TypeName="PersonalPlanungModel.BenutzerKonto">
+        <MappingFragment StoreEntitySet="BenutzerKonto">
+          <ScalarProperty Name="ID_Account" ColumnName="ID_Account" />
+          <ScalarProperty Name="Benutzername" ColumnName="Benutzername" />
+          <ScalarProperty Name="Passwort" ColumnName="Passwort" />
+          <ScalarProperty Name="IstAdmin" ColumnName="IstAdmin" />
+          <ScalarProperty Name="Angestellter" ColumnName="Angestellter" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mitarbeiter">
+      <EntityTypeMapping TypeName="PersonalPlanungModel.Mitarbeiter">
+        <MappingFragment StoreEntitySet="Mitarbeiter">
+          <ScalarProperty Name="ID_Mitarbeiter" ColumnName="ID_Mitarbeiter" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Vorname" ColumnName="Vorname" />
+          <ScalarProperty Name="Geburtsdatum" ColumnName="Geburtsdatum" />
+          <ScalarProperty Name="Einstellungsdatum" ColumnName="Einstellungsdatum" />
+          <ScalarProperty Name="Stellenbezeichnung" ColumnName="Stellenbezeichnung" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Plann">
+      <EntityTypeMapping TypeName="PersonalPlanungModel.Plann">
+        <MappingFragment StoreEntitySet="Plann">
+          <ScalarProperty Name="ID_Plan" ColumnName="ID_Plan" />
+          <ScalarProperty Name="Jahr" ColumnName="Jahr" />
+          <ScalarProperty Name="Kalenderwoche" ColumnName="Kalenderwoche" />
+          <ScalarProperty Name="Wochentag" ColumnName="Wochentag" />
+          <ScalarProperty Name="Termin" ColumnName="Termin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="MitarbeiterPlan" TypeName="PersonalPlanungModel.MitarbeiterPlan" StoreEntitySet="MitarbeiterPlan">
+      <EndProperty Name="Mitarbeiter">
+        <ScalarProperty Name="ID_Mitarbeiter" ColumnName="ID_Mitarbeiter" />
+      </EndProperty>
+      <EndProperty Name="Plann">
+        <ScalarProperty Name="ID_Plan" ColumnName="ID_Plan" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

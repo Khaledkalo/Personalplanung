@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PersonalPlanungModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BenutzerKonto">
+          <Key>
+            <PropertyRef Name="ID_Account" />
+          </Key>
+          <Property Name="ID_Account" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Benutzername" Type="nvarchar" MaxLength="50" />
+          <Property Name="Passwort" Type="nvarchar" MaxLength="50" />
+          <Property Name="IstAdmin" Type="bit" />
+          <Property Name="Angestellter" Type="int" />
+        </EntityType>
+        <EntityType Name="Mitarbeiter">
+          <Key>
+            <PropertyRef Name="ID_Mitarbeiter" />
+          </Key>
+          <Property Name="ID_Mitarbeiter" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="Vorname" Type="nvarchar" MaxLength="100" />
+          <Property Name="Geburtsdatum" Type="date" />
+          <Property Name="Einstellungsdatum" Type="date" />
+          <Property Name="Stellenbezeichnung" Type="nvarchar" MaxLength="100" />
+          <Property Name="Email" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="MitarbeiterPlan">
+          <Key>
+            <PropertyRef Name="ID_Mitarbeiter" />
+            <PropertyRef Name="ID_Plan" />
+          </Key>
+          <Property Name="ID_Mitarbeiter" Type="int" Nullable="false" />
+          <Property Name="ID_Plan" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Plann">
+          <Key>
+            <PropertyRef Name="ID_Plan" />
+          </Key>
+          <Property Name="ID_Plan" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Jahr" Type="nvarchar" MaxLength="50" />
+          <Property Name="Kalenderwoche" Type="nvarchar" MaxLength="50" />
+          <Property Name="Wochentag" Type="nvarchar" MaxLength="50" />
+          <Property Name="Termin" Type="datetime" />
+        </EntityType>
+        <Association Name="fk_Angestellter">
+          <End Role="Mitarbeiter" Type="Self.Mitarbeiter" Multiplicity="0..1" />
+          <End Role="BenutzerKonto" Type="Self.BenutzerKonto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mitarbeiter">
+              <PropertyRef Name="ID_Mitarbeiter" />
+            </Principal>
+            <Dependent Role="BenutzerKonto">
+              <PropertyRef Name="Angestellter" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Mitarbeiter">
+          <End Role="Mitarbeiter" Type="Self.Mitarbeiter" Multiplicity="1" />
+          <End Role="MitarbeiterPlan" Type="Self.MitarbeiterPlan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mitarbeiter">
+              <PropertyRef Name="ID_Mitarbeiter" />
+            </Principal>
+            <Dependent Role="MitarbeiterPlan">
+              <PropertyRef Name="ID_Mitarbeiter" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_plann">
+          <End Role="Plann" Type="Self.Plann" Multiplicity="1" />
+          <End Role="MitarbeiterPlan" Type="Self.MitarbeiterPlan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Plann">
+              <PropertyRef Name="ID_Plan" />
+            </Principal>
+            <Dependent Role="MitarbeiterPlan">
+              <PropertyRef Name="ID_Plan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PersonalPlanungModelStoreContainer">
+          <EntitySet Name="BenutzerKonto" EntityType="Self.BenutzerKonto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mitarbeiter" EntityType="Self.Mitarbeiter" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MitarbeiterPlan" EntityType="Self.MitarbeiterPlan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Plann" EntityType="Self.Plann" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="fk_Angestellter" Association="Self.fk_Angestellter">
+            <End Role="Mitarbeiter" EntitySet="Mitarbeiter" />
+            <End Role="BenutzerKonto" EntitySet="BenutzerKonto" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Mitarbeiter" Association="Self.fk_Mitarbeiter">
+            <End Role="Mitarbeiter" EntitySet="Mitarbeiter" />
+            <End Role="MitarbeiterPlan" EntitySet="MitarbeiterPlan" />
+          </AssociationSet>
+          <AssociationSet Name="fk_plann" Association="Self.fk_plann">
+            <End Role="Plann" EntitySet="Plann" />
+            <End Role="MitarbeiterPlan" EntitySet="MitarbeiterPlan" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PersonalPlanungModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BenutzerKonto">
+          <Key>
+            <PropertyRef Name="ID_Account" />
+          </Key>
+          <Property Name="ID_Account" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Benutzername" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Passwort" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IstAdmin" Type="Boolean" />
+          <Property Name="Angestellter" Type="Int32" />
+          <NavigationProperty Name="Mitarbeiter" Relationship="Self.fk_Angestellter" FromRole="BenutzerKonto" ToRole="Mitarbeiter" />
+        </EntityType>
+        <EntityType Name="Mitarbeiter">
+          <Key>
+            <PropertyRef Name="ID_Mitarbeiter" />
+          </Key>
+          <Property Name="ID_Mitarbeiter" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Vorname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Geburtsdatum" Type="DateTime" Precision="0" />
+          <Property Name="Einstellungsdatum" Type="DateTime" Precision="0" />
+          <Property Name="Stellenbezeichnung" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="BenutzerKonto" Relationship="Self.fk_Angestellter" FromRole="Mitarbeiter" ToRole="BenutzerKonto" />
+          <NavigationProperty Name="Plann" Relationship="Self.MitarbeiterPlan" FromRole="Mitarbeiter" ToRole="Plann" />
+        </EntityType>
+        <EntityType Name="Plann">
+          <Key>
+            <PropertyRef Name="ID_Plan" />
+          </Key>
+          <Property Name="ID_Plan" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Jahr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Kalenderwoche" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Wochentag" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Termin" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Mitarbeiter" Relationship="Self.MitarbeiterPlan" FromRole="Plann" ToRole="Mitarbeiter" />
+        </EntityType>
+        <Association Name="fk_Angestellter">
+          <End Role="Mitarbeiter" Type="Self.Mitarbeiter" Multiplicity="0..1" />
+          <End Role="BenutzerKonto" Type="Self.BenutzerKonto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mitarbeiter">
+              <PropertyRef Name="ID_Mitarbeiter" />
+            </Principal>
+            <Dependent Role="BenutzerKonto">
+              <PropertyRef Name="Angestellter" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MitarbeiterPlan">
+          <End Role="Mitarbeiter" Type="Self.Mitarbeiter" Multiplicity="*" />
+          <End Role="Plann" Type="Self.Plann" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="PersonalPlanungEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BenutzerKonto" EntityType="Self.BenutzerKonto" />
+          <EntitySet Name="Mitarbeiter" EntityType="Self.Mitarbeiter" />
+          <EntitySet Name="Plann" EntityType="Self.Plann" />
+          <AssociationSet Name="fk_Angestellter" Association="Self.fk_Angestellter">
+            <End Role="Mitarbeiter" EntitySet="Mitarbeiter" />
+            <End Role="BenutzerKonto" EntitySet="BenutzerKonto" />
+          </AssociationSet>
+          <AssociationSet Name="MitarbeiterPlan" Association="Self.MitarbeiterPlan">
+            <End Role="Mitarbeiter" EntitySet="Mitarbeiter" />
+            <End Role="Plann" EntitySet="Plann" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PersonalPlanungModelStoreContainer" CdmEntityContainer="PersonalPlanungEntities">
+          <EntitySetMapping Name="BenutzerKonto">
+            <EntityTypeMapping TypeName="PersonalPlanungModel.BenutzerKonto">
+              <MappingFragment StoreEntitySet="BenutzerKonto">
+                <ScalarProperty Name="ID_Account" ColumnName="ID_Account" />
+                <ScalarProperty Name="Benutzername" ColumnName="Benutzername" />
+                <ScalarProperty Name="Passwort" ColumnName="Passwort" />
+                <ScalarProperty Name="IstAdmin" ColumnName="IstAdmin" />
+                <ScalarProperty Name="Angestellter" ColumnName="Angestellter" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mitarbeiter">
+            <EntityTypeMapping TypeName="PersonalPlanungModel.Mitarbeiter">
+              <MappingFragment StoreEntitySet="Mitarbeiter">
+                <ScalarProperty Name="ID_Mitarbeiter" ColumnName="ID_Mitarbeiter" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Vorname" ColumnName="Vorname" />
+                <ScalarProperty Name="Geburtsdatum" ColumnName="Geburtsdatum" />
+                <ScalarProperty Name="Einstellungsdatum" ColumnName="Einstellungsdatum" />
+                <ScalarProperty Name="Stellenbezeichnung" ColumnName="Stellenbezeichnung" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Plann">
+            <EntityTypeMapping TypeName="PersonalPlanungModel.Plann">
+              <MappingFragment StoreEntitySet="Plann">
+                <ScalarProperty Name="ID_Plan" ColumnName="ID_Plan" />
+                <ScalarProperty Name="Jahr" ColumnName="Jahr" />
+                <ScalarProperty Name="Kalenderwoche" ColumnName="Kalenderwoche" />
+                <ScalarProperty Name="Wochentag" ColumnName="Wochentag" />
+                <ScalarProperty Name="Termin" ColumnName="Termin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="MitarbeiterPlan" TypeName="PersonalPlanungModel.MitarbeiterPlan" StoreEntitySet="MitarbeiterPlan">
+            <EndProperty Name="Mitarbeiter">
+              <ScalarProperty Name="ID_Mitarbeiter" ColumnName="ID_Mitarbeiter" />
+            </EndProperty>
+            <EndProperty Name="Plann">
+              <ScalarProperty Name="ID_Plan" ColumnName="ID_Plan" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

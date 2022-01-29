@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="Personalplanung.home"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Personalplanung"
+             mc:Ignorable="d" 
+             d:DesignHeight="650" d:DesignWidth="900" Background="#0E192A" FontSize="18">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Margin="20">
+            <Button Content="Plan anzeigen" Background="White" Height="40" Margin="0 20" Click="plan_click" />
+            <Button Content="Ausloggen" Background="White" Height="40" Margin="0 20" Click="ausloggen" />
+        </StackPanel>
+
+        <Image Height="150" Source="/Images/logo.png" Grid.Column="1"/>
+
+    </Grid>
+</UserControl>
