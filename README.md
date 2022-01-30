@@ -4,9 +4,8 @@ Software für ein Restaurant um **Personalplanung** zu vereinfachen. Die Mitarbe
 
 
 ### Login Daten:
-Benutzername: Jamieoliver
-Passwort: oliver
-
+- Benutzername: Jamieoliver
+- Passwort: oliver
 
 ## Customer GUI
 
