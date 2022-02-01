@@ -25,5 +25,5 @@ in Plan-Fenster kann ein Mitarbeiter sehen, wann seine Arbeitszeit ist.
 
 
 
-### der Gruppenmitglieder
+### Auflistung der Gruppenmitglieder
 - khaled kalo: (Github khaledkalo)
