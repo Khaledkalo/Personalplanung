@@ -35,7 +35,7 @@
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
 
-            <Label Content="Personal Plan" FontWeight="Bold" FontSize="20" Foreground="White" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Stretch"/>
+            <Label Content="Personal Plan" FontWeight="Bold" FontSize="20" Foreground="White" Grid.ColumnSpan="4" HorizontalAlignment="Center" />
             <DataGrid Grid.Row="1" Grid.Column="1" ItemsSource="{Binding}" AutoGenerateColumns="False" IsSynchronizedWithCurrentItem="True" Height="250" >
                 <DataGrid.Columns >
                     <DataGridTextColumn Header="ID" Binding="{Binding ID_Plan, Mode=OneWay}"  />
@@ -47,19 +47,19 @@
             </DataGrid>
 
             <Label Content="ID:" Grid.Row="2" Foreground="White"/>
-            <TextBox Text="{Binding /ID_Plan ,Mode=OneWay}" x:Name="DienstplanID" Grid.Row="2" Grid.Column="1" Margin="3"/>
+            <TextBox Text="{Binding ID_Plan ,Mode=OneWay}" x:Name="DienstplanID" Grid.Row="2" Grid.Column="1" Margin="3"/>
 
             <Label Content="Jahr:" Grid.Row="3" Foreground="White"/>
-            <TextBox Text="{Binding /Jahr ,Mode=OneWay}" Grid.Row="3" Grid.Column="1" Margin="3"/>
+            <TextBox Text="{Binding Jahr ,Mode=OneWay}" Grid.Row="3" Grid.Column="1" Margin="3"/>
 
             <Label Content="KW:" Grid.Row="4" Foreground="White"/>
-            <TextBox Text="{Binding /Kalenderwoche ,Mode=OneWay}" Grid.Row="4" Grid.Column="1" Margin="3"/>
+            <TextBox Text="{Binding Kalenderwoche ,Mode=OneWay}" Grid.Row="4" Grid.Column="1" Margin="3"/>
 
             <Label Content="Wochentag:" Grid.Row="5" Foreground="White"/>
-            <TextBox Text="{Binding /Wochentag,Mode=OneWay}" Grid.Row="5" Grid.Column="1" Margin="3"/>
+            <TextBox Text="{Binding Wochentag,Mode=OneWay}" Grid.Row="5" Grid.Column="1" Margin="3"/>
 
             <Label Content="Termin:" Grid.Row="6" Foreground="White"/>
-            <TextBox Text="{Binding /Termin, StringFormat=dd.MM.yyyy,Mode=OneWay}" Grid.Row="6" Grid.Column="1" Margin="3"/>
+            <TextBox Text="{Binding Termin, StringFormat=dd.MM.yyyy,Mode=OneWay}" Grid.Row="6" Grid.Column="1" Margin="3"/>
 
 
             <TextBlock Text="Eingeteilte Mitarbeiter:" Grid.Row="8" TextWrapping="Wrap" Foreground="White"/>

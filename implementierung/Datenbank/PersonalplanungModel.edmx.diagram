@@ -5,9 +5,9 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="5e9f6ec2f77e4cf282af7867292b60fc" Name="Diagram1">
-        <EntityTypeShape EntityType="PersonalPlanungModel.BenutzerKonto" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="PersonalPlanungModel.Mitarbeiter" Width="1.5" PointX="0.75" PointY="2.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="PersonalPlanungModel.Plann" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="PersonalPlanungModel.BenutzerKonto" Width="1.5" PointX="7.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PersonalPlanungModel.Mitarbeiter" Width="1.5" PointX="4.5" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PersonalPlanungModel.Plann" Width="1.5" PointX="1.75" PointY="1.5" IsExpanded="true" />
         <AssociationConnector Association="PersonalPlanungModel.fk_Angestellter" ManuallyRouted="false" />
         <AssociationConnector Association="PersonalPlanungModel.MitarbeiterPlan" ManuallyRouted="false" />
       </Diagram>
